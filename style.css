@@ -1,0 +1,43 @@
+body{
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 0px;
+}
+
+header h1{
+  text-align: center;
+}
+.materia{
+  border: 2px;
+  width: auto;
+  border-color: grey;
+  border-style: dotted;
+  padding-left: 1em;
+}
+.codigo{
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 90%;
+  border: 2px;
+  border-color: black;
+  border-style:groove;
+  color:darkblue;
+  background-color: gainsboro;
+}
+
+.indentacion{
+  margin-bottom: 3em;
+}
+
+footer{
+  height: 40px;
+  text-align: center;
+  background-color: gray;
+  color: aliceblue;
+  
+  
+}
+
+footer p{
+  padding-top: 10px;
+  margin-bottom: 0px;
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>GuiaJavaScript</title>
+</head>
+
+<body>
+  <header>
+    <h1>Guia rapida de JavaScript</h1>
+  </header>
+  <section class="indentacion">
+    <h2>Index</h2>
+    <ol>
+      <li><A HREF="#variablesYConstantes">Variables y Constantes</A></li>
+      <li><A HREF="#operadoresLogicos"> Operadores Aritmeticos y Logicos</A></li>
+      <li>Condicionales Logicos
+        <ul>
+          <li><A HREF="#if"> Condicional IF </A></li>
+          <li><A HREF="#switch"> Condicional Switch </A></li>
+        </ul>
+      </li>
+      <li>Bucles
+        <ul>
+          <li><A HREF="#for"> Bucle For </A></li>
+          <li><A HREF="#forIn"> Bucle For ... In </A></li>
+          <li><A HREF="while"> Bucle While </A></li>
+          <li><A HREF="#doWhile"> Bucle Do ... While </A></li>
+        </ul>
+      </li>
+      <li><A HREF="#with"> La construcción with </A></li>
+      <li><A HREF="#transformacionDeDatos">Transformacion de datos</A></li>
+    </ol>
+
+
+    <!-- <A NAME="marca"> </A>  para crear las marcas en el texto-->
+  </section>
+
+
+
+  <section>
+    <!--Variables y Constantes -->
+    <div class="materia">
+      <a NAME="variablesYConstantes"></a>
+      <h3>Variables y Constantes en JavaScript</h3>
+      <p>Entre los tipos de variables tenemos 3</p>
+      <pre class="codigo">
+        const nombreEmpleado = "José Perez";   // Genera una Variable que no se puede modificar en el futuro
+        let direccion = "Av.105 - Calle 3";    // Genera una variable que solo vive en el bloque donde se creo
+        var costoDelPasaje = 1500;             // Genera una varible general donde puede ser llamada de cualquier 
+        let tasaEmbarque = 50.5;                  otro bloque, estas no se recomiendan usar 
+        var Variable1, Variable2;              // Podemos Inicializar muchas variables a la vez
+      </pre>
+      <p>Estas variables pueden ser llamadas de muchos modos entre los cuales estan estos:</p>
+      <pre class="codigo">
+        const nombrePasajero = "Alan"
+        const apellidoPasajero = "Peña"
+
+        let nombreCompleto = `El nombre completo es: ${nombrePasajero} ${apellidoPasajero}`;
+      </pre>
+    </div>
+
+    
+
+    <!--Operadores Aritmeticos y Logicos-->
+    <div class="materia">
+      <a NAME="operadoresLogicos"></a>
+      <h3>Operadores Aritmeticos y Logicos</h3>
+      <h4>Operadores Aritmeticos</h4>
+      <p>Entre los operadores Aritmeticos tenemos muchas abreviaciones</p>
+      <pre class="codigo">
+          +=      b += 3  equivale a  b=b+3
+          -=      b -= 3  equivale a  b=b-3
+          *=      b *= 3  equivale a  b=b*3
+          /=      b /= 3  equivale a  b=b/3
+          %=      b %= 3  equivale a  b=b%3
+          ++      b++     equivale a  b=b+1
+        </pre>
+      <p>NO es lo mismo hacer esto:</p>
+      <pre class="codigo">
+          Variable1 = 20;
+          Variable2 = Variable1++;
+
+          console.log(${Variable1} ${Variable2})
+        </pre>
+      <p>Resultado: 2021</p>
+      <p>Que hacer esto: </p>
+      <pre class="codigo">
+          Variable1 = 20;
+          Variable2 = ++Variable1;
+
+          console.log(${Variable1} ${Variable2})
+        </pre>
+      <p>Resultado: 2121</p>
+      <p>1- Pues en el primer caso se realiza primero la asignación (Variable1=20) y después se realizala asignacion
+        (Variable2= Variable1)
+        y finalmente se incrementa (variable2 = Variable2 + 1)
+      </p>
+
+      <p>
+        2- Igualmente se realiza primero la asignación (Variable1=20) y después el incremento (Variable1= 20 + 1)
+        y finalmente la asignacion (variable2 = Variable1)
+      </p>
+      <h4>Operadores Logicos</h4>
+      <pre class="codigo">
+          ==      igual
+          !=      distinto
+          >       mayor que
+          <       menor que
+          >=      mayor o igual que
+          <=      menor o igual que
+          ===     estrictamente igual
+          !==     estrictamente distinto
+          && AND ('y' lógica)
+          || OR ('o' lógica)
+          ! NOT ('no' lógica)
+      </pre>
+
+    </div>
+
+    <!-- Condicional If -->
+    <div class="materia">
+      <A NAME="if"> </A>
+      <h3>Operador Condicional If</h3>
+      <p>Este operador sirve para comprobar una condicion de alguna variable u objeto </p>
+      <pre class="codigo">
+        if(condicion a cumplirse) {
+          se ejecutará si se cumple la condicion }
+        else {
+          se ejecutará si no se cumple}
+      </pre>
+      <p>Ahora Veremos un Ejemplo</p>
+      <pre class="codigo">
+        const valorPasaje = 1000;
+
+        if (valorPasaje === 1000) {
+          console.log('El pasaje vale 1000');
+        }
+      </pre>
+      <p>Resultado: En esta ocacion la condicion es verdadera por lo cual se mostrara el mensaje</p>
+      <h4>Condicional Ternario</h4>
+
+      <p>También tenemos el condicional ternario para simplificar la sintaxis de este operador en una linea</p>
+      <pre class="codigo">
+        (Expresión) ? (Si es true): (Si es false)
+
+        (x>y) ? alert("el mayor es x") : alert("el mayor es y")
+      </pre>
+    </div>
+
+    <!-- Condicional Switch-->
+    <div class="materia">
+      <a NAME="switch"></a>
+      <h3>Condicional Switch</h3>
+      <p>Esta condicional permite verificar una sentencias varias veces seguidas</p>
+
+      <pre class="codigo">
+        switch(condicion) {
+          case condicion a cumplirse 1:
+            se ejecuta para este caso 1;
+          case condicion a cumplirse 2:
+            se ejecuta para este caso 2;
+          case condicion a cumplirse 3:
+            se ejecuta para este caso 3;
+            break;
+          default :
+            se ejecutará en caso de no cumplirse ningun caso;
+            break;
+        } 
+      </pre>
+      <p>Aca un ejemplo facil para comprobar el valor del pasaje a una ciudad </p>
+      <pre class="codigo">
+        let ciudadDestino = "Lima"
+
+        switch(ciudadDestino) {
+          case "Bogotá": 
+              valorPasaje = 500;
+              break;
+          case "Lima": 
+              valorPasaje = 400;
+              break;
+          case "Santiago": 
+              valorPasaje = 380;
+              break;
+          case "Montevideo": 
+              valorPasaje = 200;
+              break;
+          default:
+              console.log(`No hay pasajes para la ciudad indicada`);
+              break;
+          }
+      </pre>
+      <p>Resultado: valorPasaje = 400</p>
+    </div>
+
+    <!--Bucle For-->
+    <div class="materia">
+      <A NAME="for"> </A>
+      <h3>Bucle For</h3>
+      <p>Sirve para recorrer un Array</p>
+      <pre class="codigo">
+        for([Inicialización]; [Condición]; [Expresión de actualización])
+          {
+            Instrucciones a repetir
+          }
+        </pre>
+      <p>Ejemplo y el resultado </p>
+      <pre class="codigo">
+          var MaxNumero = 10 ;
+          
+          for(i = 1; i <= MaxNumero; i++) {
+            document.write( i )
+          }
+        </pre>
+      <p>Resultado: 12345678910</p>
+    </div>
+
+    <!--Bucle For ... In-->
+    <div class="materia">
+      <A NAME="forIn"> </A>
+      <h3>Bucle For ... In</h3>
+      <p>Produce una iteración a través de todas las propiedades de un objeto, Por ejemplo, este código recorre a
+        document y nos muestra todas sus propiedades.</p>
+      <p>Sirve para recorer listas </p>
+
+      <pre class="codigo">
+          for(var 'Propiedad' in 'Objeto') {
+            Instrucciones a repetir
+          }
+          </pre>
+      <p>Ejemplo y el resultado </p>
+      <pre class="codigo">
+            const personas = ["alan","memo","lisa"]
+            for(var i in personas) {
+              document.write(personas[i]);
+            }
+          </pre>
+      <p>Resultado: alan memo lisa</p>
+    </div>
+
+
+    <!--Bucle While-->
+    <div class="materia">
+      <a NAME="while"></a>
+      <h3>Bucle While</h3>
+      <p> La sintaxis del bucle while </p>
+      <pre class="codigo">
+        while(Condición) {
+          Instrucciones a repetir
+          }
+      </pre>
+      <pre class="codigo">
+        const numero=10;
+        let contador = 0;
+
+        while (numero <= contador) {
+          console.log(contador)
+          contador++
+        } 
+      </pre>
+
+    </div>
+
+    <!--Bucle Do ... While-->
+    <a NAME="doWhile"></a>
+    <div class="materia">
+      <h3>Bucle Do ... While</h3>
+      <p> La sintaxis del bucle Do ... while </p>
+      <pre class="codigo">
+            Do {
+              Instrucciones a Realizar
+            } While (Condicion a cumplir);
+          </pre>
+      <pre class="codigo">
+            const numero=10;
+            let contador = 0;
+    
+            do{
+              console.log(contador)
+              contador++
+            } While(numero <= contador)
+          </pre>
+
+    </div>
+
+    <!--La construccion de with-->
+    <div class="materia">
+      <a NAME="with"></a>
+      <h3>La construccion con With</h3>
+      <p>Este nos ahorra escribir siempre el nombre de un objeto si vamos a utilizarlo muchas veces para acceder a
+        sus métodos, propiedades,... </p>
+      <pre class="codigo">
+        with(objeto) {
+          Varias sentencias
+        }
+      </pre>
+      <p>Por ejemplo </p> 
+      <pre class="codigo">
+        with(document) {
+          write('Esta sentencia evita escribir el metodo "write"');
+          write('cuando usas muy seguido. Texto ');
+          write('de prueba.');
+      </pre> 
+      <p>Resultado: Esta sentecia evita escribir el metoso "write" cuando usas muy seguido. Texto de prueba</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>Creado por Alan Peña </p>
+
+  </footer>
+</body>
+
+</html>
